@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Day, In English · Daily Routine</title>
+<meta name="description" content="An interactive English lesson about daily routines: vocabulary, present simple and adverbs of frequency.">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="#hero">☀️ My Day</a>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+  <nav id="menu" aria-label="Sections">
+    <a href="#words">Words</a><a href="#build">Sentences</a><a href="#quiz">Challenge</a><a href="#write">My routine</a>
+    <span class="prog" id="prog">0/4 done</span>
+    <button class="reset" id="resetAll">Reset</button>
+  </nav>
+</header>
+<main>
+<section class="hero" id="hero">
+  <div class="sky"><div class="stars"></div><div class="orb" id="orb"></div><div class="hills"></div></div>
+  <div class="panel">
+    <h1>My Day,<br>In English</h1>
+    <p class="sub">Slide the clock and watch a daily routine come to life.</p>
+    <div class="clock" id="clock">7:00 AM</div>
+    <div class="now"><span class="big" id="nowE">🪥</span><p id="nowT">I brush my teeth and have breakfast.</p><button class="say" id="nowSay" aria-label="Listen">🔊</button></div>
+    <input type="range" id="time" min="5" max="23" step="0.5" value="7" aria-label="Time of day">
+    <a class="btn" href="#words">Start learning</a>
+  </div>
+</section>
+
+<section class="sec words" id="words">
+  <div class="wrap">
+    <h2>Routine words</h2>
+    <p class="lead">Tap a card to flip it. Press 🔊 to hear it. Flip 6 cards to complete this step.</p>
+    <div class="chips" id="chips"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="sec build" id="build">
+  <div class="wrap">
+    <h2>Build a sentence</h2>
+    <p class="lead">We use the <b>present simple</b> for routines. With <b>he, she</b> the verb changes: <i>she wakes up</i>. Build 3 sentences to complete this step.</p>
+    <div class="maker">
+      <label>Who?<select id="bs"></select></label>
+      <label>How often?<select id="bf"></select></label>
+      <label>What?<select id="ba"></select></label>
+      <button class="btn dark" id="bgo">Make it!</button>
+    </div>
+    <div class="out" id="bout">Your sentence will appear here.</div>
+    <p class="tip" id="btip">Tip: adverbs go before the main verb: <i>I <b>always</b> get up early.</i></p>
+  </div>
+</section>
+
+<section class="sec quiz" id="quiz"><div class="wrap narrow"><h2>Challenge</h2><div class="qbox" id="qbox"></div></div></section>
+
+<section class="sec write" id="write">
+  <div class="wrap narrow">
+    <h2>My routine</h2>
+    <p class="lead">Write 5 sentences about your own day. Use time expressions (<i>at 7:00, in the evening</i>) and adverbs.</p>
+    <textarea id="mine" placeholder="I usually wake up at 6:30. Then I..." aria-label="My daily routine"></textarea>
+    <div class="row"><button class="btn dark" id="msave">Save my routine</button><span id="mcount">0 sentences</span></div>
+    <p class="end">Small habits, practiced every day, build big English. See you tomorrow! 🌅</p>
+  </div>
+</section>
+</main>
+<div class="toast" id="toast" role="status"></div>
+<script src="js/app.js"></script>
+</body>
+</html>
